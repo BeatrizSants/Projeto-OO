@@ -3,11 +3,10 @@ import pygame
 import sys
 from package.models.screen import Screen
 
-class Game:
+class Game(Screen):
     def __init__(self):
-            self.screen = Screen()
-            self.score = 0
-            self.time = 2
+            super().__init__()
+            self.time = 10
             self.running = True
             self.started = False
 
@@ -17,7 +16,7 @@ class Game:
         button_start = None
         while self.running:
             if not self.started:
-                button_start = self.screen.startScreen()
+                button_start = self.startScreen(self.score)
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -36,7 +35,7 @@ class Game:
                     self.started = False
                     while not self.started:
                         if not self.started:
-                            button_restart =  self.screen.endScreen(self.score)
+                            button_restart =  self.endScreen(self.score)
 
                         for event in pygame.event.get():
                             if event.type == pygame.QUIT:
@@ -49,7 +48,11 @@ class Game:
                                     game_timer = pygame.time.get_ticks()
                   
                 else:
-                    self.screen.gameScreen(self.score, self.time_left)
+                    self.gameScreen(self.score, self.time_left)
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        mouse_pos = pygame.mouse.get_pos()
+                        self.cheese_clicked(mouse_pos)
+                        self.trap1_clicked(mouse_pos)
 
             clock.tick(120)
 

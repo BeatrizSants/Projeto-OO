@@ -6,4 +6,4 @@ class Hole:
             (120, 300), (270, 300), (420, 300)
         ]
         self.size = (60, 60)
-        self.color = (0, 0, 0)
+        self.hole_color = (100, 100, 100) 
