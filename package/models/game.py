@@ -2,13 +2,18 @@
 import pygame
 import sys
 from package.models.screen import Screen
+from package.models.score import Score
 
 class Game(Screen):
-    def __init__(self):
+    def __init__(self, cheese, trap):
             super().__init__()
-            self.time = 10
+            self.score = Score()
+            self.time = 20
             self.running = True
             self.started = False
+            self.cheese = cheese
+            self.trap = trap
+            
 
     def run(self):
         clock = pygame.time.Clock()
@@ -16,7 +21,7 @@ class Game(Screen):
         button_start = None
         while self.running:
             if not self.started:
-                button_start = self.startScreen(self.score)
+                button_start = self.startScreen()
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -35,7 +40,7 @@ class Game(Screen):
                     self.started = False
                     while not self.started:
                         if not self.started:
-                            button_restart =  self.endScreen(self.score)
+                            button_restart =  self.endScreen(self.score.score)
 
                         for event in pygame.event.get():
                             if event.type == pygame.QUIT:
@@ -48,12 +53,16 @@ class Game(Screen):
                                     game_timer = pygame.time.get_ticks()
                   
                 else:
-                    self.gameScreen(self.score, self.time_left)
+                    self.gameScreen(self.score.score, self.time_left)
                     if event.type == pygame.MOUSEBUTTONDOWN:
                         mouse_pos = pygame.mouse.get_pos()
-                        self.cheese_clicked(mouse_pos)
-                        self.trap1_clicked(mouse_pos)
-
+                        if self.cheese.cheese_clicked(mouse_pos):
+                            self.score.add_point()
+                        elif self.trap.trap_clicked(mouse_pos):
+                            self.score.take_point()
+            
+            self.cheese.activate_cheese()
+            self.trap.activate_trap()
             clock.tick(120)
 
         pygame.quit()
