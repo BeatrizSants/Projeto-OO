@@ -63,9 +63,8 @@ class Screen:
         self.cheese.activate_cheese()
         # Desenha os queijos nas posições atuais
         for cheese_position in self.cheese.cheese_positions:
-            pygame.draw.rect(
-                self.screen,
-                self.cheese.cheese_color,
+            self.screen.blit(
+                self.cheese.cheese_image,
                 (cheese_position[0], cheese_position[1], self.cheese.hole.size[0], self.cheese.hole.size[1])
             )
     def drawTrap(self):

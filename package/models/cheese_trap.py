@@ -6,7 +6,8 @@ class Cheese():
     def __init__(self, trap):
         self.hole = Hole()
         self.trap = trap
-        self.cheese_color = (225,225,0)
+        cheese_img = pygame.image.load("package/static/img/cheese.png")
+        self.cheese_image = pygame.transform.scale(cheese_img, (self.hole.size[0], self.hole.size[1]))
         self.cheese_positions = []  #posicoes dos queijos
         self.cheese_timer = 0  #tempode aparicao
 

@@ -1,6 +1,4 @@
 #classe pontuacao
-import json
-import os
 class Score:
     def __init__(self):
         self.score = 0
