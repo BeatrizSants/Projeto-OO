@@ -1,10 +1,10 @@
-My.Queijo!
+# My.Queijo!
 
-Resumo
+# Descrição
 
 O My.Queijo! é um jogo simples desenvolvido em Python usando o pacote Pygame. O objetivo principal é acumular pontos clicando em blocos de queijo (Cheese) e evitando clicar em armadilhas (Trap). A pontuação é atualizada dinamicamente e exibida na tela.
 
-Como funciona
+# Funcionalidades
 
 O jogo apresenta uma tela interativa onde blocos aparecem aleatoriamente em posições predefinidas.
 
@@ -14,11 +14,11 @@ Blocos de armadilhas resultam em perda de pontos.
 
 A pontuação do jogador é mantida apenas durante o funcionamento do jogo e será resetada ao fechar e reiniciar o programa.
 
-Objetivo
+Objetivo:
 
 Acumule o máximo de pontos possível antes que o tempo do jogo termine.
 
-Requisitos
+# Requisitos
 
 Python instalado na máquina.
 
