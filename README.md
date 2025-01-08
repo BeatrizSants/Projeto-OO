@@ -24,5 +24,5 @@ Python instalado na máquina.
 
 Pacote Pygame instalado.
 
-- Desenvolvido como parte de um projeto com a linguagem Python.
+- Desenvolvido com a linguagem Python como parte de um projeto de Programação Orientada a Objetos
 
