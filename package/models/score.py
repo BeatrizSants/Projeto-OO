@@ -1,10 +1,13 @@
 #classe pontuacao
 class Score:
     def __init__(self):
-        self.score = 0
+        self.__score = 0
 
     def add_point(self):
-        self.score += 2
+        self.__score += 2
 
     def take_point(self):
-        self.score -= 1
+        self.__score -= 1
+
+    def get_score(self):
+        return self.__score

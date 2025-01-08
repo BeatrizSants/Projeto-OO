@@ -40,7 +40,7 @@ class Game(Screen):
                     self.started = False
                     while not self.started:
                         if not self.started:
-                            button_restart =  self.endScreen(self.score.score)
+                            button_restart =  self.endScreen(self.score.get_score())
 
                         for event in pygame.event.get():
                             if event.type == pygame.QUIT:
@@ -53,7 +53,7 @@ class Game(Screen):
                                     game_timer = pygame.time.get_ticks()
                   
                 else:
-                    self.gameScreen(self.score.score, self.time_left)
+                    self.gameScreen(self.score.get_score(), self.time_left)
                     if event.type == pygame.MOUSEBUTTONDOWN:
                         mouse_pos = pygame.mouse.get_pos()
                         if self.cheese.cheese_clicked(mouse_pos):
@@ -63,6 +63,6 @@ class Game(Screen):
             
             self.cheese.activate_cheese()
             self.trap.activate_trap()
-            clock.tick(120)
+            clock.tick(60)
 
         pygame.quit()
