@@ -14,9 +14,7 @@ Blocos de armadilhas resultam em perda de pontos.
 
 A pontuação do jogador é mantida apenas durante o funcionamento do jogo e será resetada ao fechar e reiniciar o programa.
 
-Objetivo:
-
-Acumule o máximo de pontos possível antes que o tempo do jogo termine.
+Objetivo: acumule o máximo de pontos possíveis antes que o tempo do jogo termine.
 
 # Requisitos
 
